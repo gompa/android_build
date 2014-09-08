@@ -40,12 +40,10 @@ ifeq ($(strip $(TARGET_ARCH_VARIANT)),)
 TARGET_ARCH_VARIANT := armv5te
 endif
 
-# This specifies toolchain being used. In case of issues, stick with 4.7
-# 4.8 is default in my optimizations, as it gives noticable performance boost
-# Don't use 4.9 unless you feel confident, varios strange libstlport segmentation faults may happen (bootloop)
+# Please don't specify custom toolchain version here
+# Use proper manifest entry instead
 ifeq ($(strip $(TARGET_GCC_VERSION_EXP)),)
-#TARGET_GCC_VERSION := 4.7
-TARGET_GCC_VERSION := 4.9
+TARGET_GCC_VERSION := ArchiDroid
 else
 TARGET_GCC_VERSION := $(TARGET_GCC_VERSION_EXP)
 endif
